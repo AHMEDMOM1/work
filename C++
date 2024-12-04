@@ -96,7 +96,7 @@ vector <short>  checkNotHeatNums(int& total, int& K, vector <short>& inptVc) {
 
 
 	for (unsigned int i{}; i < inptVc.size(); i++) {
-		if (i == inptVc.size() - 1 && inptVc.at(i) == 0) { numbers.erase(numbers.begin()); cout << "testif" << i << endl; }
+		if (i == inptVc.size() - 1 && inptVc.at(i) == 0) { numbers.erase(numbers.begin()); }
 
 		else {
 			numbers.erase(numbers.begin() + (inptVc.at(i) - i));
