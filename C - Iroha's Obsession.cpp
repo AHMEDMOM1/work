@@ -5,16 +5,13 @@ She is shopping, and now paying at the cashier. Her total is
 N yen (the currency of Japan), thus she has to hand at least 
 N yen to the cashier (and possibly receive the change).
 However, as mentioned before, she is very particular about numbers. When she hands money to the cashier,
-the decimal notation of the amount must not contain any digits that she dislikes. Under this condition,
-she will hand the minimum amount of money.
+the decimal notation of the amount must not contain any digits that she dislikes. Under this condition, she will hand the minimum amount of money.
 Find the amount of money that she will hand to the cashier.
 Constraints
 1≦N<10000
 1≦K<10
 0≦D 
 {D1,D2,...,DK} != {1,2,3,4,5,6,7,8,9}
-Code |
-     v
 */
 
 #include <iostream>
