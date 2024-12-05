@@ -88,7 +88,7 @@ vector <short> totaMoney(int total, vector <short>& numbers) {
 	return tot;
 }
 
-vector <short>  checkNotHeatNums(int& total, int& K, vector <short>& inptVc) {
+vector <short>  checkNotHeatNums(size_t& total, size_t& K, vector <short>& inptVc) {
 	vector <short> numbers{ 0,1,2,3,4,5,6,7,8,9 };
 
 
