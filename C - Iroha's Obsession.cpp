@@ -10,7 +10,7 @@ Find the amount of money that she will hand to the cashier.
 Constraints
 1≦N<10000
 1≦K<10
-0≦D 
+0≦D1 <D2<…<DK≦9
 {D1,D2,...,DK} != {1,2,3,4,5,6,7,8,9}
 */
 
@@ -106,19 +106,24 @@ vector <short>  checkNotHeatNums(int& total, int& K, vector <short>& inptVc) {
 }
 
 vector <short> inputNumbers() {
-	int total{}, K{};
+	size_t total{}, K{};
+	
+	do{
+	    cout << "How much will you pay: ";
+	    cin >> total;
+	} while(total > 10000);
 
-	cout << "How much will you pay: ";
-	cin >> total;
-
-	cout << "How many numbers do you hate: ";
-	cin >> K;
-
+	do{
+	    cout << "How many numbers do you hate: ";
+	    cin >> K;
+	} while(K > 9);
 	vector <short> sht(K);
 
 	for (unsigned int i{}; i < sht.size(); i++) {
+		do{
 		cout << "The " << i + 1 << ". Number is: ";
 		cin >> sht.at(i);
+		} while( sht.at(i) > 9 );
 	}
 	sort(sht.begin(), sht.end());
 	return checkNotHeatNums(total, K, sht);
