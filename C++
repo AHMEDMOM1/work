@@ -1,4 +1,4 @@
-Problem Statement
+/* Problem Statement
 
 Iroha is very particular about numbers. There are 
 K digits that she dislikes: D1,D 2,...,DK
@@ -22,7 +22,7 @@ Constraints
 Code |
      v
 
-
+*/
 #include <iostream>
 #include <vector>
 #include <algorithm>
