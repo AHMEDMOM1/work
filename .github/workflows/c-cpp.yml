@@ -1,4 +1,4 @@
-name: c-cpp.yml
+name:  C/C++ CI
 
 on:
   push:
