@@ -24,43 +24,45 @@ Using three phrases of length 5, 5 and 7, it is possible to construct a Haiku.
 
 */
 
-void printResult(bool isHaikuValid) {
-    cout << (isHaikuValid ? "Yes" : "No");
+void printyesOrNo(bool isThereHaiku) {
+	cout << (isThereHaiku ? "Yes" : "No");
 }
 
-bool isHaikuPattern(short syllableCounts[]) {
-    short haikuPattern[]{5, 7, 5};
-    bool isMatched[3]{};
-    for (int i = 0; i < 3; i++) {
-        for (int j = 0; j < 3; j++) {
-            if (!isMatched[j]) {
-                if (haikuPattern[j] == syllableCounts[i]) {
-                    isMatched[j] = true;
-                    break;
-                }
-            }
-        }
-    }
-    for (bool match : isMatched) {
-        if (!match) {
-            return false;
-        }
-    }
-    return true;
+bool isHaiku(vector <short> phrase) {
+	vector<short>haiku{ 5, 7, 5 };
+	vector <bool> ok(haiku.size());
+	for (int i{}; i < phrase.size(); i++) {
+		for (int j{}; j < haiku.size(); j++) {
+			if (!ok.at(j)) {
+				if ( haiku.at(j) == phrase.at(i) ) {
+					ok.at(j) = true; break;
+				}
+			}
+		}
+	}
+	for (bool checkFalse : ok) {
+		if (checkFalse == false) { return 0; };
+	}
+
+	return 1;
 }
 
-void inputSyllables(short syllableCounts[]) {
-    for (int i = 0; i < 3; i++) {
-        do {
-            cout << "Enter the number of syllables for phrase " << i + 1 << ": ";
-            cin >> syllableCounts[i];
-        } while (syllableCounts[i] > 9 || syllableCounts[i] < 1);
-    }
+void inputPhrase() {
+	vector<short>syllable(3);
+	
+	for (size_t i{}; i < syllable.size(); i++) {
+		do {
+			cout << "Enter " << i + 1 << ".Syllable: ";
+			cin >> syllable.at(i);
+		} while (syllable.at(i) < 1 || syllable.at(i) > 9);
+	}
+	printyesOrNo(isHaiku(syllable));
 }
 
 int main() {
-    short syllableCounts[3]{};
-    inputSyllables(syllableCounts);
-    printResult(isHaikuPattern(syllableCounts));
-    return 0;
+	inputPhrase();
+	
+
+	return 0;
 }
+
