@@ -30,47 +30,44 @@ NO
 
 */
 
-#include <iostream>
-
-using namespace std;
-
-void printyesOrNo(bool isThereHaiku) {
-	cout << (isThereHaiku ? "YES" : "NO");
+void printResult(bool isHaikuValid) {
+    cout << (isHaikuValid ? "Yes" : "No");
 }
 
-bool isHaiku(short phrase[]) {
-	short Haiku[]{ 5,7,5 };
-	bool ok[3]{};
-	for (int i{}; i < 3; i++) {
-		for (int j{}; j < 3; j++) {
-			if (!ok[j]) {
-				if ( Haiku[j] == phrase[i] ) {
-					ok[j] = true; break;
-				}
-			}
-		}
-	}
-	for (bool checkFalse : ok) {
-		if (checkFalse == false) { return 0; };
-	}
-
-	return 1;
+bool isHaikuPattern(short syllableCounts[]) {
+    short haikuPattern[]{5, 7, 5};
+    bool isMatched[3]{};
+    for (int i = 0; i < 3; i++) {
+        for (int j = 0; j < 3; j++) {
+            if (!isMatched[j]) {
+                if (haikuPattern[j] == syllableCounts[i]) {
+                    isMatched[j] = true;
+                    break;
+                }
+            }
+        }
+    }
+    for (bool match : isMatched) {
+        if (!match) {
+            return false;
+        }
+    }
+    return true;
 }
 
-void inputPhrase() {
-	short A{}, B{}, C{};
-	do{
-	  cin >> A >> B >> C;
-	} while(( A < 1 || A > 10) || (B < 1 || B > 10) || C < 1 || C > 10);
-	
-	short phrase[3]{A,B,C};
-
-	printyesOrNo(isHaiku(phrase));
+void inputSyllables(short syllableCounts[]) {
+    for (int i = 0; i < 3; i++) {
+        do {
+            cout << "Enter the number of syllables for phrase " << i + 1 << ": ";
+            cin >> syllableCounts[i];
+        } while (syllableCounts[i] > 9 || syllableCounts[i] < 1);
+    }
 }
 
 int main() {
-	inputPhrase();
-	
-
-	return 0;
+    short syllableCounts[3]{};
+    inputSyllables(syllableCounts);
+    printResult(isHaikuPattern(syllableCounts));
+    return 0;
 }
+
