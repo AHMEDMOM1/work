@@ -22,12 +22,6 @@ Sample Output 1
 YES
 Using three phrases of length 5, 5 and 7, it is possible to construct a Haiku.
 
-Sample Input 2
-7 7 5
-
-Sample Output 2
-NO
-
 */
 
 void printResult(bool isHaikuValid) {
