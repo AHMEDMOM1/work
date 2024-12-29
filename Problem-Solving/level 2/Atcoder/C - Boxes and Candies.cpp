@@ -31,15 +31,6 @@ Print the minimum number of operations required to achieve the objective.
 
 
 
-/* // Solve in another way
-int totalMaxtAmountApple(vector <int> applesInbox, int& x) {
-	int result{};
-	for (int sh : applesInbox) {
-		result += sh;
-	}
-	return result -= x * ceil((double)applesInbox.size() / 2);
-}
-*/
 
 void prntSmEtngAple(int totalApple, vector <int>& applesInbox) {
 	cout << "Still apple in boxes is: { ";
@@ -65,6 +56,16 @@ int totalMaxtAmountApple(vector <int>& applesInbox, int& x) {
 
 	return totalApple;
 }
+
+/* // Solve in another way
+int totalMaxtAmountApple(vector <int> applesInbox, int& x) {
+	int result{};
+	for (int sh : applesInbox) {
+		result += sh;
+	}
+	return result -= x * ceil((double)applesInbox.size() / 2);
+}
+*/
 
 vector <int> inputAppleNumber(int& N, int& x) {
 	do {
