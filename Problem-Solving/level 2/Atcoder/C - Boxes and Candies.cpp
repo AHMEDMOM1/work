@@ -25,13 +25,6 @@ Print the minimum number of operations required to achieve the objective.
 
 // ***Link of question*** : https://atcoder.jp/contests/arc064/tasks/arc064_a
 
-
-
-/////     ******************************    \\\\\\
-
-
-
-
 void prntSmEtngAple(int totalApple, vector <int>& applesInbox) {
 	cout << "Still apple in boxes is: { ";
 	for (size_t i{}; i < applesInbox.size(); i++) {	
