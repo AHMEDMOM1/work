@@ -14,6 +14,8 @@ Constraints
 {D1,D2,...,DK} != {1,2,3,4,5,6,7,8,9}
 */
 
+// *** Link of question *** : https://atcoder.jp/contests/arc058/tasks/arc058_a
+
 #include <iostream>
 #include <vector>
 #include <algorithm>
