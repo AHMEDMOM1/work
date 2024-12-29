@@ -25,6 +25,22 @@ Print the minimum number of operations required to achieve the objective.
 
 // ***Link of question*** : https://atcoder.jp/contests/arc064/tasks/arc064_a
 
+
+
+/////     ******************************    \\\\\\
+
+
+
+/* // Solve in another way
+int totalMaxtAmountApple(vector <int> applesInbox, int& x) {
+	int result{};
+	for (int sh : applesInbox) {
+		result += sh;
+	}
+	return result -= x * ceil((double)applesInbox.size() / 2);
+}
+*/
+
 void prntSmEtngAple(int totalApple, vector <int>& applesInbox) {
 	cout << "Still apple in boxes is: { ";
 	for (size_t i{}; i < applesInbox.size(); i++) {	
@@ -35,7 +51,6 @@ void prntSmEtngAple(int totalApple, vector <int>& applesInbox) {
 	}cout << " }" << endl;
 	cout << "Your eating apple is: " << totalApple << endl;
 }
-
 
 int totalMaxtAmountApple(vector <int>& applesInbox, int& x) {
 	int amntOfsub{}, subRes{}, totalApple{};
@@ -67,11 +82,16 @@ vector <int> inputAppleNumber(int& N, int& x) {
 		do {
 			cin >> applesInbox.at(i);
 		} while (applesInbox.at(i) < 0 || applesInbox.at(i) > pow(10, 9));
+	/* // Add it with the other solution
+ 	if (applesInbox.at(i) == 0) {
+	    applesInbox.erase(applesInbox.begin() + i);
+	    --i;
+  	}
+ 	*/
 	}
 	return applesInbox;
 
 }
-
 
 int main() {
 	int N{}, x{};
