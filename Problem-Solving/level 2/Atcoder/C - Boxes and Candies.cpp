@@ -51,7 +51,7 @@ int totalMaxtAmountApple(vector <int>& applesInbox, int& x) {
 }
 
 /* // Solve in another way
-int totalMaxtAmountApple(vector <int> applesInbox, int& x) {
+int totalMaxtAmountApple(vector <int>& applesInbox, int& x) {
 	int result{};
 	for (int sh : applesInbox) {
 		result += sh;
