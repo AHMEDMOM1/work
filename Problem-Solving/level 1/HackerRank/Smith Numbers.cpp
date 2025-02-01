@@ -75,9 +75,11 @@ bool isEqual(short sumDevid, short sumDigit) {
 
 int inputNum() {
     int num{};
-    do {
-        cin >> num;
-    } while (num < 0 || num > numeric_limits<int>::max());
+    
+    while (!(cin >> num) || (num < 0 || num >= numeric_limits<int>::max())) {
+    	cin.clear();
+    	cin.ignore();
+    }
 
     return num;
 }
